@@ -4,35 +4,60 @@
   position: sticky;
   top: 0px;
   z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Added padding for better spacing */
 }
 
 .b1 {
-  width: 10%;
-  margin-left: 135px;
-  padding: 20px;
+  flex: 1; /* Allow the logo to take up space */
 }
 
 .b2 {
-  position: absolute;
-  left: 27%;
-  top: 0%;
-  padding: 30px;
+  flex: 2; /* Allow the menu to take up more space */
+  display: flex;
+  justify-content: center; /* Center the menu items */
+}
+
+.b2 ul {
+  display: flex; /* Change to flex for horizontal alignment */
+  list-style: none;
+  padding: 0;
 }
 
 .b2 ul li {
-  display: inline-block;
-  font-size: 13px;
-  margin-left: 40px;
-  text-decoration: none;
+  margin: 0 20px; /* Adjusted margin for spacing */
   position: relative;
+}
+
+.b3 {
+  flex: 1; /* Allow the search and icons to take up space */
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+}
+
+.b3 .myInput {
+  border-radius: 19px;
+  padding: 5px; /* Added padding for better usability */
+  margin-right: 10px; /* Spacing between input and icons */
+}
+
+.b2 ul li {
+  /* display: inline-block; */
+  /* font-size: 13px; */
+  /* margin-left: 40px; */
+  text-decoration: none;
+  /* position: relative; */
 }
 .b2 ul li a {
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1.6px;
+  /* letter-spacing: 1.6px; */
   font-family: "Helvetica", "Arial", sans-serif;
-  position: relative;
+  position: relative; 
 }
 
 .b2 ul li::after {
@@ -85,13 +110,13 @@
 .b2 .dropdown:hover .dropdown-content {
   display: block;
 }
-.b3 {
+/* .b3 {
   display: flex;
   position: absolute;
   width: 24%;
   left: 72%;
   top: 31%;
-}
+} */
 .b3 i {
   padding-left: 20px;
 }
@@ -106,4 +131,48 @@
   color: black;
   font-size: 20px;
   padding-top: 7px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .b1 {
+    margin-left: 0; /* Remove margin on smaller screens */
+    text-align: center; /* Center the logo */
+  }
+
+  .b2 {
+    flex-direction: column; /* Stack the menu items */
+    align-items: center; /* Center align the menu items */
+  }
+
+  .b2 ul {
+    flex-direction: column; /* Stack menu items vertically */
+    padding: 0; /* Remove padding */
+  }
+
+  .b2 ul li {
+    margin: 10px 0; /* Adjust margin for vertical spacing */
+  }
+
+  .b3 {
+    flex-direction: column; /* Stack search and icons */
+    align-items: center; /* Center align items */
+    margin-top: 10px; /* Space above the search */
+  }
+
+  .b3 span {
+    margin-left: 0; /* Remove left margin */
+    margin-top: 5px; /* Add top margin for spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .b2 ul li {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .b3 .myInput {
+    width: 100%; /* Full width input on mobile */
+  }
 }

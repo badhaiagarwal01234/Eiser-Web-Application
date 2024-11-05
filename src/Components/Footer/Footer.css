@@ -1,39 +1,43 @@
 .footer {
-  height: 500px;
+  height: auto; /* Change height to auto for flexibility */
   width: 100%;
   background-color: #0d0d1f;
   position: relative;
+  padding: 20px 0; /* Add padding for spacing */
 }
+
 .f1 {
-  height: 200px;
   width: 80%;
-  position: absolute;
-  top: 100px;
-  left: 147px;
+  margin: auto; /* Center the footer content */
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 2.3fr;
+  grid-template-columns: repeat(5, 1fr); /* Use repeat for cleaner code */
   column-gap: 10px;
 }
+
 .f2 {
-  height: 200px;
+  height: auto; /* Allow height to adjust based on content */
 }
+
 .f2 h3 {
   padding: 10px;
   margin-left: 3px;
   color: white;
 }
+
 .f2 p {
   padding: 8px;
   margin-left: 8px;
   color: grey;
   position: relative;
 }
+
 .y1 {
   background-color: rgba(255, 255, 255, 0.15);
   height: 40px;
   width: 220px;
   margin-left: 19px;
 }
+
 #email {
   height: 40px;
   border: none;
@@ -41,27 +45,28 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.15);
 }
+
 .y2 {
   color: white;
   background-color: green;
-  position: absolute;
-  top: 96%;
-  left: 97%;
   padding: 5px;
+  cursor: pointer; /* Add cursor pointer for better UX */
 }
+
 .z1 {
-  position: absolute;
-  top: 89%;
-  left: 11%;
-  display: grid;
-  grid-template-columns: 9fr 5fr;
-  column-gap: 270px;
+  margin-top: 20px; /* Space between sections */
+  display: flex;
+  justify-content: space-between; /* Flexbox for better alignment */
+  align-items: center;
+  width: 80%;
+  margin: auto; /* Center the copyright section */
 }
+
 .z12 {
   display: flex;
-  margin-left: 20px;
   align-items: center;
 }
+
 .z13 {
   background-color: rgba(255, 255, 255, 0.15);
   width: 32px;
@@ -74,35 +79,53 @@
   color: white;
 }
 
-.inner1 {
-  height: 270px;
-  background-color: yellow;
-  overflow: hidden;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .f1 {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on tablets */
+  }
+
+  .y1 {
+    width: 100%; /* Full width on smaller screens */
+    margin: 10px 0; /* Margin for spacing */
+  }
+
+  .y2 {
+    width: 100%; /* Full width for subscribe button */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Space above button */
+  }
+
+  .z1 {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
 }
 
-.cart-info {
-  height: 60px;
-  background-color: rgba(113, 205, 20, 0.4);
-  transition: all 400ms ease;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  justify-content: center;
-  gap: 25px;
-}
-.circle {
-  margin-top: 3px;
-  height: 40px;
-  width: 42px;
-  border-radius: 50px;
-  background-color: white;
-  text-align: center;
-  transition: all 400ms ease;
-}
-.circle i {
-  margin-top: 12px;
-}
-.b41:hover .cart-info {
-  transform: translateY(-60px);
+@media (max-width: 480px) {
+  .f1 {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .f2 h3 {
+    font-size: 18px; /* Smaller heading font */
+  }
+
+  .f2 p {
+    font-size: 14px; /* Smaller paragraph font */
+  }
+
+  .y1 {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .y2 {
+    width: 100%; /* Full width for mobile */
+    padding: 10px; /* More padding for easier clicking */
+  }
+
+  .z1 {
+    width: 100%; /* Full width for copyright section */
+    text-align: center; /* Center text */
+  }
 }

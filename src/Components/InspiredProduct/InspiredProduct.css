@@ -8,6 +8,7 @@
 
 .inspired-products .container {
   max-width: 1300px;
+  margin: 0 auto; /* Center the container */
 }
 
 .inspired-products .section-title h2 {
@@ -34,7 +35,7 @@
 
 .inspired-products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Ensure 4 items per row */
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 items per row */
   gap: 33px;
 }
 
@@ -73,4 +74,39 @@
 .error {
   color: red;
   margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .inspired-products-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .inspired-products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .inspired-products-grid {
+    grid-template-columns: 1fr; /* 1 item per row on extra small screens */
+  }
+
+  .inspired-products .section-title h2 {
+    font-size: 24px; /* Reduce title font size */
+  }
+
+  .inspired-products .statement p {
+    font-size: 14px; /* Reduce subtitle font size */
+  }
+
+  .inspired-products .product-info h3 {
+    font-size: 16px; /* Reduce product title font size */
+  }
+
+  .inspired-products .product-info .price {
+    font-size: 14px; /* Reduce price font size */
+  }
 }

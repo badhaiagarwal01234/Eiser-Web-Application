@@ -5,18 +5,18 @@
   justify-content: center;
   background-color: #f7f7f7;
   gap: 5%;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .discount-content {
   text-align: center;
-  margin-right: 60px;
+  margin-right: 60px; /* Right margin for larger screens */
 }
 
 .discount-content h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   font-weight: normal;
-  color: #797979;
   color: #4a4a4a;
   margin: 0;
 }
@@ -25,9 +25,8 @@
   font-size: 100px;
   line-height: 80px;
   color: #2a2a2a;
-  margin-bottom: 0px;
-  font-weight: 700;
   margin: 10px 0;
+  font-weight: 700;
 }
 
 .discount-content .btn {
@@ -49,5 +48,63 @@
 
 .discount-image img {
   max-width: 100%;
-  height: 500px;
+  height: 500px; /* Fixed height for larger screens */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .discount {
+    flex-direction: column; /* Stack items vertically on medium screens */
+    align-items: center; /* Center items */
+  }
+
+  .discount-content {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
+
+  .discount-image img {
+    height: 400px; /* Adjust height for medium screens */
+  }
+
+  .discount-content h1 {
+    font-size: 80px; /* Reduce font size for the discount */
+  }
+}
+
+@media (max-width: 768px) {
+  .discount-content h1 {
+    font-size: 60px; /* Further reduce font size for smaller screens */
+  }
+
+  .discount-content h2 {
+    font-size: 20px; /* Reduce subtitle font size */
+  }
+
+  .discount-content .btn {
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Reduce button font size */
+  }
+
+  .discount-image img {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .discount-content h1 {
+    font-size: 40px; /* Reduce font size for very small screens */
+  }
+
+  .discount-content h2 {
+    font-size: 18px; /* Further reduce subtitle font size */
+  }
+
+  .discount-content p {
+    font-size: 12px; /* Reduce paragraph font size */
+  }
+
+  .discount-image img {
+    height: 250px; /* Adjust height for very small screens */
+  }
 }

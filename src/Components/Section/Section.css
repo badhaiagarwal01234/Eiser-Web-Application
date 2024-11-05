@@ -2,6 +2,7 @@
   position: relative;
   background-color: #e4e4e4;
   height: 200px;
+  padding: 20px; /* Add padding for better spacing */
 }
 
 .box1a {
@@ -9,6 +10,7 @@
   top: 40%;
   left: 10%;
 }
+
 .box1a h4 {
   color: rgb(94, 94, 94);
 }
@@ -27,8 +29,73 @@
 #x1 {
   height: 100px;
 }
+
 h4 {
   font-size: 15px;
-
   margin-top: 13px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .box1 {
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .box1a {
+    top: 30%; /* Adjust position for medium screens */
+    left: 5%; /* Adjust left position */
+  }
+
+  .box1b {
+    top: 50%; /* Adjust position for medium screens */
+    left: 70%; /* Adjust left position */
+  }
+
+  h4 {
+    font-size: 14px; /* Reduce font size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .box1 {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .box1a {
+    top: 20%; /* Adjust position for smaller screens */
+    left: 5%; /* Adjust left position */
+  }
+
+  .box1b {
+    top: 40%; /* Adjust position for smaller screens */
+    left: 60%; /* Adjust left position */
+  }
+
+  h4 {
+    font-size: 12px; /* Further reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .box1 {
+    text-align: center; /* Center text for very small screens */
+  }
+
+  .box1a {
+    position: relative; /* Change to relative positioning */
+    top: 0; /* Reset top positioning */
+    left: 0; /* Reset left positioning */
+    margin: 0 auto; /* Center the content */
+  }
+
+  .box1b {
+    position: relative; /* Change to relative positioning */
+    top: 0; /* Reset top positioning */
+    left: 0; /* Reset left positioning */
+    margin: 0 auto; /* Center the content */
+  }
+
+  h4 {
+    font-size: 12px; /* Further reduce font size for very small screens */
+  }
 }
